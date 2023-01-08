@@ -13,6 +13,9 @@ wget --quiet --wait 2 --random-wait -r -l1 --no-parent --no-directories \
       https://download.lineage.microg.org/$RANDOM_DEVICE/
 #done
 
+#create the release/tag if it does not exist
+github-release release --user sahlers83 --repo backup_lineageos -t $RANDOM_DEVICE
+
 github-release  info --user sahlers83 \
    --repo backup_lineageos \
    | grep artifact  > current_files_in_github
