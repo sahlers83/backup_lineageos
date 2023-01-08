@@ -9,8 +9,7 @@ echo $RANDOM_DEVICE
                                                                                                                    
 #for LIST_OF_DEVICES in ${myArray[@]}                                                                              
 echo "Downloading lineage files"                                                                                   
-wget --quiet --wait 2 --random-wait \                                                                              
-      -r -l1 --no-parent --no-directories \
+wget --quiet --wait 2 --random-wait -r -l1 --no-parent --no-directories \
       https://download.lineage.microg.org/$RANDOM_DEVICE/
 #done
 
