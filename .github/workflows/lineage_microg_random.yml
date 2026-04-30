@@ -17,8 +17,8 @@ on:
         required: false
         type: boolean
 
-# push:
-#   branches: [ master ]
+  push:
+
   schedule:
     - cron: '30 7 * * 1,5'
     
@@ -26,7 +26,7 @@ jobs:
 
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
 
     - name: Check out repository
@@ -34,7 +34,7 @@ jobs:
 
     - name: Installing github-release
       run: |
-        go install github.com/github-release/github-release@latest > /dev/null 2>&1
+        go install github.com/github-release/github-release@latest
 
     - name: Change PAT and running script
       env:
